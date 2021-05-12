@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Main Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables */
+:root {
+    --light-color: #eeeeee;
+    --dark-color: #444;
+    --light-secondary-color: #aaaaaa;
+    --dark-secondary-color: #222831;
+    --secondary-color: #f05454;
+}
+
+/* Utilities */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Text Colors */
+.txt-light-secondary-color {
+    color: var(--light-secondary-color);
+}
+
+.txt-primary {
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0.7rem 0;
+    display: inline-block;
+}
+
+.btn-primary {
+    color: var(--light-color);
+}
+
+.btn-primary:after {
+    content: '';
+    border-bottom: var(--secondary-color) 4px solid;
+    padding: 0.6rem 0;
+    width: 10rem;
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+    display: block;
+}
+
+.btn-primary:hover:after { transform: scaleX(1); }
+.btn-primary:after { transform-origin: 0% 50%;}
+
+.btn-secondary {
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--secondary-color);
+    color: var(--light-color);
+    border-radius: 1px;
+    position: relative;
+    transform: scale(1);
+    transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--dark-secondary-color);
+    color: var(--light-color);
+    transform: scale(1.2);
+}
+
+.btn-secondary:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 10px;
+    bottom: 0;
+    right: -10px;
+    transform: rotate(-45deg);
+    background: var(--light-color);
+}
+
+
+/* Flex Containers */
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    padding: 0 7rem;
+}
+
+/* Navbar */
+.menu-wrap {
+    display: none;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar ul li {
+    color: var(--light-secondary-color);
+    background: transparent;
+}
+
+#navbar ul li a {
+    color: inherit;
+    font-size: 1rem;
+    padding: 0.7rem 0.2rem;
+    margin: 0 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.4s ease;
+}
+
+#navbar ul li a.nav-links:after {
+    margin-top: 0.4rem;
+    content: '';
+    display: block;
+    color: var(--light-color);
+    border-bottom: 2px solid var(--light-color);
+    transform: scaleX(0);
+    transition: all 0.4s ease;
+}
+
+#navbar ul li a:hover {
+    color: var(--light-color);
+}
+
+#navbar ul li a.nav-links:hover:after {
+    transform: scaleX(1);
+}
+
+#navbar ul li a.nav-button {
+    border: 2px solid var(--light-secondary-color);
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
+    margin: 0 0.7rem;
+    transition: all 0.5s ease;
+}
+
+#navbar ul li a.nav-button:hover {
+    border: 2px solid var(--light-color);;
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+#navbar ul li a.active {
+    color: var(--light-color);
+}
+
+#navbar ul li a.active:after {
+    transform: scaleX(1);
+}
+
+#navbar a.nav-brand img{
+    height: 7rem;
+    width: 10rem;
+}
+
+#navbar a i {
+    font-size: 1.5rem;
+}
+
+
+
+/* Index Showcase */
+#index-showcase {
+    height: 100vh;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+#index-showcase .col {
+    height: 80vh;
+}
+
+#index-showcase .col img {
+    height: 400px;
+    margin-bottom: 4rem;
+    position: relative;
+    right: 60px;
+}
+
+#index-showcase .col h1 {
+    line-height: 4.5rem;
+    margin-bottom: 6.7rem;
+    font-weight: 100;
+    font-size: 4.6rem;
+}
+
+#index-showcase .col p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    margin-bottom: 7rem;
+}
+
+#index-showcase .col a {
+    align-self: flex-start;
+}
+
+
+/* Features */
+#features {
+    height: 55vh;
+    background: var(--light-color);
+}
+
+#features .flex-container {
+    height: inherit;
+}
+
+#features .col {
+    align-items: flex-start;
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-top: 5.5rem;
+    padding: 5rem 10rem;
+    padding-top: 0;
+}
+
+
+#features .col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+
+#features .col .feature-link {
+    margin-top: 2rem;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#features .col:hover .feature-link {
+    opacity: 1;
+}
+
+#features .col:hover h3 {
+    color: var(--dark-secondary-color);
+    transform: scale(1.3);
+}
+
+#features .col .feature-link > div {
+    height: 20px;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+#features .col .feature-link > div > div {
+    position: relative;
+    background: var(--secondary-color);
+    height: 3px;
+    width: 100%;
+    flex: none;
+}
+
+#features .col .feature-link > div > div:before, 
+#features .col .feature-link > div > div:after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    height: 2.5px;
+    width: 20px;
+    top: 0;
+    right: 0;
+    transform-origin: 100% 0;
+    transition: transform 0.3s ease;
+}
+
+#features .col .feature-link > div > div:after {
+    transform-origin: 100% 100%;
+}
+
+#features .col .feature-link:hover > div > div:before {
+    transform-origin: 100% 0;
+    transform: rotate(45deg);
+}
+
+#features .col .feature-link:hover > div > div:after {
+    transform-origin: 100% 100%;
+    transform: rotate(-45deg);
+}
+
+/* Watch Info */
+#watch-info {
+    height: 70vh;
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+#watch-info .flex-container {
+    height: inherit;
+}
+
+#watch-info .col h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--dark-secondary-color);
+    margin-bottom: 4.7rem;
+}
+
+#watch-info .col p {
+    font-weight: 600;
+    line-height: 1.6rem;
+}
+
+#watch-info .col a {
+    align-self: flex-start;
+    margin-top: 4rem;
+    padding: 0.7rem 1.7rem;
+}
+
+#watch-info .img-col{
+    background: url("../img/watch.jpg") center center/cover no-repeat;
+    height: 100%;  
+}
